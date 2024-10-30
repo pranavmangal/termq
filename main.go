@@ -6,12 +6,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/briandowns/spinner"
 	"github.com/pranavmangal/termq/config"
+	"github.com/pranavmangal/termq/providers/cerebras"
+	"github.com/pranavmangal/termq/providers/groq"
 
-	"github.com/pranavmangal/termq/cerebras"
-	"github.com/pranavmangal/termq/groq"
-
+	"github.com/briandowns/spinner"
 	"github.com/charmbracelet/glamour"
 )
 
