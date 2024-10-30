@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
+	"github.com/briandowns/spinner"
 	"github.com/pranavmangal/termq/config"
 
 	"github.com/pranavmangal/termq/cerebras"
@@ -14,6 +16,15 @@ import (
 )
 
 func main() {
+	args := os.Args
+	if len(args) < 2 {
+		fmt.Println("Please provide a query to run.")
+		return
+	}
+
+	s := spinner.New(spinner.CharSets[14], 20*time.Millisecond)
+	s.Start()
+
 	if !config.Exists() {
 		configFilePath := config.Create()
 		fmt.Println("No configuration file was found. It has been created for you at:")
@@ -25,12 +36,6 @@ func main() {
 	cfg, err := config.Parse()
 	if err != nil {
 		log.Fatalf("The configuration is invalid: %v\nPlease fix the errors and try again.", err)
-	}
-
-	args := os.Args
-	if len(args) < 2 {
-		fmt.Println("Please provide a query to run.")
-		return
 	}
 
 	query := args[1]
@@ -60,9 +65,11 @@ func main() {
 	r, _ := glamour.NewTermRenderer(glamour.WithAutoStyle())
 	mdOutput, err := r.Render(queryResp)
 	if err != nil {
+		s.Stop()
 		fmt.Println(queryResp)
 		os.Exit(0)
 	}
 
+	s.Stop()
 	fmt.Println(mdOutput)
 }
