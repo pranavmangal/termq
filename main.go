@@ -5,8 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/pranavmangal/termq/cerebras"
 	"github.com/pranavmangal/termq/config"
+
+	"github.com/pranavmangal/termq/cerebras"
+	"github.com/pranavmangal/termq/groq"
 
 	"github.com/charmbracelet/glamour"
 )
@@ -36,6 +38,14 @@ func main() {
 
 	if cfg.Cerebras.IsValid() {
 		res, err := cerebras.RunQuery(query, cfg)
+		if err != nil {
+			fmt.Println("Failed to run query: ", err)
+			return
+		}
+		queryResp = res
+
+	} else if cfg.Groq.IsValid() {
+		res, err := groq.RunQuery(query, cfg)
 		if err != nil {
 			fmt.Println("Failed to run query: ", err)
 			return
