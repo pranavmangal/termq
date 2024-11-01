@@ -43,6 +43,14 @@ archives:
       - goos: windows
         format: zip
 
+brews:
+  - name: termq
+    homepage: https://github.com/pranavmangal/termq
+    description: A simple tool to query LLMs from the terminal.
+    repository:
+      owner: pranavmangal
+      name: homebrew-tap
+
 changelog:
   sort: asc
   filters:
