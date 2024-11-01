@@ -26,6 +26,7 @@ type Config struct {
 	SystemPrompt string   `toml:"system_prompt"`
 	Groq         Provider `toml:"groq"`
 	Cerebras     Provider `toml:"cerebras"`
+	Gemini       Provider `toml:"gemini"`
 }
 
 const defaultSystemPrompt = `You are a helpful assistant run from the terminal. Be very concise. Respond in markdown. Code blocks should contain language identifiers.`

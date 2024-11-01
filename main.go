@@ -8,6 +8,7 @@ import (
 
 	"github.com/pranavmangal/termq/config"
 	"github.com/pranavmangal/termq/providers/cerebras"
+	"github.com/pranavmangal/termq/providers/gemini"
 	"github.com/pranavmangal/termq/providers/groq"
 
 	"github.com/briandowns/spinner"
@@ -40,25 +41,20 @@ func main() {
 	query := args[1]
 	var queryResp string
 
+	// Prefer fastest provider first
 	if cfg.Cerebras.IsValid() {
-		res, err := cerebras.RunQuery(query, cfg)
-		if err != nil {
-			fmt.Println("Failed to run query: ", err)
-			return
-		}
-		queryResp = res
-
+		queryResp, err = cerebras.RunQuery(query, cfg)
 	} else if cfg.Groq.IsValid() {
-		res, err := groq.RunQuery(query, cfg)
-		if err != nil {
-			fmt.Println("Failed to run query: ", err)
-			return
-		}
-		queryResp = res
-
+		queryResp, err = groq.RunQuery(query, cfg)
+	} else if cfg.Gemini.IsValid() {
+		queryResp, err = gemini.RunQuery(query, cfg)
 	} else {
 		fmt.Println("No provider is configured. Please configure one and try again.")
 		return
+	}
+
+	if err != nil {
+		log.Fatalf("Error while running query: %v\n", err)
 	}
 
 	r, _ := glamour.NewTermRenderer(glamour.WithAutoStyle())

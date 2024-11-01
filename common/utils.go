@@ -30,7 +30,9 @@ func MakeRequest[Body, Res any](url string, body Body, apiKey string, res *Res) 
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer "+apiKey)
+	if apiKey != "" {
+		req.Header.Set("Authorization", "Bearer "+apiKey)
+	}
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
