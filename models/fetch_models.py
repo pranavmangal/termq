@@ -61,5 +61,8 @@ if __name__ == "__main__":
         "gemini": sorted(gemini_models),
     }
 
-    with open("models/available_models.json", "w") as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(script_dir, "available_models.json")
+
+    with open(output_path, "w") as f:
         json.dump(models, f, indent=2)

@@ -28,8 +28,7 @@ jobs:
           CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        working-directory: ./termq
-        run: python termq/models/fetch_models.py
+        run: python models/fetch_models.py
 
       - name: Check for changes
         id: git-check
