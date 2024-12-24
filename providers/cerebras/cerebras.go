@@ -2,6 +2,8 @@ package cerebras
 
 import (
 	"fmt"
+	"slices"
+	"strings"
 
 	"github.com/pranavmangal/termq/common"
 	cfg "github.com/pranavmangal/termq/config"
@@ -35,8 +37,13 @@ type Response struct {
 func RunQuery(query string, config cfg.Config) (string, error) {
 	cb := config.Cerebras
 
-	if !common.IsModelAvailable(cb.Model, avlModels) {
-		return "", fmt.Errorf(`Model "%s" is not available on Cerebras`, cb.Model)
+	avlModels, err := common.GetModels("cerebras")
+	if err == nil && !slices.Contains(avlModels, cb.Model) {
+		return "", fmt.Errorf(
+			"The model '%s' is not available on Cerebras. Available models:\n%s",
+			cb.Model,
+			strings.Join(avlModels, "\n"),
+		)
 	}
 
 	messages := []Message{
@@ -46,7 +53,7 @@ func RunQuery(query string, config cfg.Config) (string, error) {
 	body := Request{Model: cb.Model, Messages: messages}
 
 	var jsonResp Response
-	err := common.MakeRequest(API_URL, body, cb.ApiKey, &jsonResp)
+	err = common.MakeRequest(API_URL, body, cb.ApiKey, &jsonResp)
 	if err != nil {
 		return "", err
 	}

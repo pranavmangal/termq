@@ -6,6 +6,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/pranavmangal/termq/common"
 	"github.com/pranavmangal/termq/config"
 	"github.com/pranavmangal/termq/providers/cerebras"
 	"github.com/pranavmangal/termq/providers/gemini"
@@ -25,6 +26,14 @@ func main() {
 	s := spinner.New(spinner.CharSets[14], 20*time.Millisecond)
 	s.Start()
 
+	if !common.ModelCacheExists() {
+		common.CreateModelCache()
+	} else {
+		go func() {
+			common.UpdateModelCache()
+		}()
+	}
+
 	if !config.Exists() {
 		configFilePath := config.Create()
 		fmt.Println("No configuration file was found. It has been created for you at:")
@@ -42,29 +51,29 @@ func main() {
 	var queryResp string
 
 	// Prefer fastest provider first
-	if cfg.Cerebras.IsValid() {
+	if cfg.Cerebras.Exists() {
 		queryResp, err = cerebras.RunQuery(query, cfg)
-	} else if cfg.Groq.IsValid() {
+	} else if cfg.Groq.Exists() {
 		queryResp, err = groq.RunQuery(query, cfg)
-	} else if cfg.Gemini.IsValid() {
+	} else if cfg.Gemini.Exists() {
 		queryResp, err = gemini.RunQuery(query, cfg)
 	} else {
+		s.Stop()
 		fmt.Println("No provider is configured. Please configure one and try again.")
 		return
 	}
 
 	if err != nil {
+		s.Stop()
 		log.Fatalf("Error while running query: %v\n", err)
 	}
 
 	r, _ := glamour.NewTermRenderer(glamour.WithAutoStyle())
 	mdOutput, err := r.Render(queryResp)
-	if err != nil {
-		s.Stop()
-		fmt.Println(queryResp)
-		os.Exit(0)
-	}
-
 	s.Stop()
-	fmt.Println(mdOutput)
+	if err != nil {
+		fmt.Println(queryResp)
+	} else {
+		fmt.Println(mdOutput)
+	}
 }

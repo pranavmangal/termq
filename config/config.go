@@ -14,7 +14,7 @@ type Provider struct {
 	ApiKey string `toml:"api_key"`
 }
 
-func (c Provider) IsValid() bool {
+func (c Provider) Exists() bool {
 	if c.Model == "" || c.ApiKey == "" {
 		return false
 	}

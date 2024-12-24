@@ -8,16 +8,6 @@ import (
 	"net/http"
 )
 
-func IsModelAvailable(model string, avlModels []string) bool {
-	for _, m := range avlModels {
-		if m == model {
-			return true
-		}
-	}
-
-	return false
-}
-
 func MakeRequest[Body, Res any](url string, body Body, apiKey string, res *Res) error {
 	jsonBody, err := json.Marshal(body)
 	if err != nil {

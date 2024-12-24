@@ -2,19 +2,14 @@ package gemini
 
 import (
 	"fmt"
+	"slices"
+	"strings"
 
 	"github.com/pranavmangal/termq/common"
 	cfg "github.com/pranavmangal/termq/config"
 )
 
 const API_URL = "https://generativelanguage.googleapis.com/v1beta"
-
-var avlModels = []string{
-	"gemini-1.5-flash",
-	"gemini-1.5-flash-8b",
-	"gemini-1.5-pro",
-	"gemini-1.0-pro",
-}
 
 type Parts struct {
 	Text string `json:"text"`
@@ -47,8 +42,13 @@ func getFullUrl(model string, apiKey string) string {
 func RunQuery(query string, config cfg.Config) (string, error) {
 	gc := config.Gemini
 
-	if !common.IsModelAvailable(gc.Model, avlModels) {
-		return "", fmt.Errorf(`Model "%s" is not available on Google Gemini`, gc.Model)
+	avlModels, err := common.GetModels("gemini")
+	if err == nil && !slices.Contains(avlModels, gc.Model) {
+		return "", fmt.Errorf(
+			"The model '%s' is not available on Google AI. Available models:\n%s",
+			gc.Model,
+			strings.Join(avlModels, "\n"),
+		)
 	}
 
 	body := Request{
@@ -59,7 +59,7 @@ func RunQuery(query string, config cfg.Config) (string, error) {
 	fullUrl := getFullUrl(gc.Model, gc.ApiKey)
 
 	var jsonResp Response
-	err := common.MakeRequest(fullUrl, body, "", &jsonResp)
+	err = common.MakeRequest(fullUrl, body, "", &jsonResp)
 	if err != nil {
 		return "", err
 	}
