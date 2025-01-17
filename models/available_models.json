@@ -1,7 +1,6 @@
 {
   "cerebras": [
     "llama-3.3-70b",
-    "llama3.1-70b",
     "llama3.1-8b"
   ],
   "groq": [
