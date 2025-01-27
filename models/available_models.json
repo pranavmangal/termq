@@ -4,6 +4,7 @@
     "llama3.1-8b"
   ],
   "groq": [
+    "deepseek-r1-distill-llama-70b",
     "distil-whisper-large-v3-en",
     "gemma2-9b-it",
     "llama-3.1-8b-instant",
