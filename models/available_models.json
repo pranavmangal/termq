@@ -4,7 +4,6 @@
     "llama3.1-8b"
   ],
   "groq": [
-    "allam-2-7b",
     "deepseek-r1-distill-llama-70b",
     "deepseek-r1-distill-qwen-32b",
     "distil-whisper-large-v3-en",
@@ -21,6 +20,7 @@
     "llama3-8b-8192",
     "mixtral-8x7b-32768",
     "qwen-2.5-32b",
+    "qwen-2.5-coder-32b",
     "whisper-large-v3",
     "whisper-large-v3-turbo"
   ],
