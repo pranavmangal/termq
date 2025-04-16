@@ -5,6 +5,8 @@
   ],
   "groq": [
     "allam-2-7b",
+    "compound-beta",
+    "compound-beta-mini",
     "deepseek-r1-distill-llama-70b",
     "distil-whisper-large-v3-en",
     "gemma2-9b-it",
