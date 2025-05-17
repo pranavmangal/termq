@@ -2,7 +2,8 @@
   "cerebras": [
     "llama-3.3-70b",
     "llama-4-scout-17b-16e-instruct",
-    "llama3.1-8b"
+    "llama3.1-8b",
+    "qwen-3-32b"
   ],
   "groq": [
     "allam-2-7b",
