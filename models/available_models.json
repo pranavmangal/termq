@@ -26,6 +26,7 @@
     "playai-tts",
     "playai-tts-arabic",
     "qwen-qwq-32b",
+    "qwen/qwen3-32b",
     "whisper-large-v3",
     "whisper-large-v3-turbo"
   ],
