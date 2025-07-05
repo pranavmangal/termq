@@ -29,9 +29,7 @@ func main() {
 	if !common.ModelCacheExists() {
 		common.CreateModelCache()
 	} else {
-		go func() {
-			common.UpdateModelCache()
-		}()
+		go common.UpdateModelCache()
 	}
 
 	if !config.Exists() {
