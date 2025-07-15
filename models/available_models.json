@@ -22,9 +22,9 @@
     "meta-llama/llama-prompt-guard-2-22m",
     "meta-llama/llama-prompt-guard-2-86m",
     "mistral-saba-24b",
+    "moonshotai/kimi-k2-instruct",
     "playai-tts",
     "playai-tts-arabic",
-    "qwen-qwq-32b",
     "qwen/qwen3-32b",
     "whisper-large-v3",
     "whisper-large-v3-turbo"
@@ -65,6 +65,7 @@
     "gemini-2.5-pro-preview-05-06",
     "gemini-2.5-pro-preview-06-05",
     "gemini-2.5-pro-preview-tts",
+    "gemini-embedding-001",
     "gemini-embedding-exp",
     "gemini-embedding-exp-03-07",
     "gemini-exp-1206",
