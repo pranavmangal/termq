@@ -32,7 +32,6 @@
     "whisper-large-v3-turbo"
   ],
   "gemini": [
-    "gemini-1.0-pro-vision-latest",
     "gemini-1.5-flash",
     "gemini-1.5-flash-002",
     "gemini-1.5-flash-8b",
@@ -69,7 +68,6 @@
     "gemini-embedding-001",
     "gemini-embedding-exp",
     "gemini-embedding-exp-03-07",
-    "gemini-exp-1206",
-    "gemini-pro-vision"
+    "gemini-exp-1206"
   ]
 }
