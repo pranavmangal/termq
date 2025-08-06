@@ -1,6 +1,7 @@
 {
   "cerebras": [
     "deepseek-r1-distill-llama-70b",
+    "gpt-oss-120b",
     "llama-3.3-70b",
     "llama-4-maverick-17b-128e-instruct",
     "llama-4-scout-17b-16e-instruct",
@@ -27,6 +28,8 @@
     "meta-llama/llama-prompt-guard-2-22m",
     "meta-llama/llama-prompt-guard-2-86m",
     "moonshotai/kimi-k2-instruct",
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
     "playai-tts",
     "playai-tts-arabic",
     "qwen/qwen3-32b",
