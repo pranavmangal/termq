@@ -61,16 +61,19 @@
     "gemini-2.5-flash-image-preview",
     "gemini-2.5-flash-lite",
     "gemini-2.5-flash-lite-preview-06-17",
+    "gemini-2.5-flash-lite-preview-09-2025",
     "gemini-2.5-flash-preview-05-20",
+    "gemini-2.5-flash-preview-09-2025",
     "gemini-2.5-flash-preview-tts",
     "gemini-2.5-pro",
     "gemini-2.5-pro-preview-03-25",
     "gemini-2.5-pro-preview-05-06",
     "gemini-2.5-pro-preview-06-05",
     "gemini-2.5-pro-preview-tts",
-    "gemini-embedding-001",
-    "gemini-embedding-exp",
-    "gemini-embedding-exp-03-07",
-    "gemini-exp-1206"
+    "gemini-exp-1206",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-pro-latest",
+    "gemini-robotics-er-1.5-preview"
   ]
 }
