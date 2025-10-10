@@ -12,7 +12,6 @@
   ],
   "groq": [
     "allam-2-7b",
-    "deepseek-r1-distill-llama-70b",
     "groq/compound",
     "groq/compound-mini",
     "llama-3.1-8b-instant",
