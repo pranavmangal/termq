@@ -5,7 +5,8 @@
     "llama3.1-8b",
     "qwen-3-235b-a22b-instruct-2507",
     "qwen-3-32b",
-    "zai-glm-4.6"
+    "zai-glm-4.6",
+    "zai-glm-4.7"
   ],
   "groq": [
     "allam-2-7b",
