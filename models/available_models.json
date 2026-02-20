@@ -48,6 +48,8 @@
     "gemini-3-flash-preview",
     "gemini-3-pro-image-preview",
     "gemini-3-pro-preview",
+    "gemini-3.1-pro-preview",
+    "gemini-3.1-pro-preview-customtools",
     "gemini-embedding-001",
     "gemini-exp-1206",
     "gemini-flash-latest",
