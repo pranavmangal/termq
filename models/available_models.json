@@ -1,9 +1,7 @@
 {
   "cerebras": [
     "gpt-oss-120b",
-    "llama3.1-8b",
-    "qwen-3-235b-a22b-instruct-2507",
-    "zai-glm-4.7"
+    "llama3.1-8b"
   ],
   "groq": [
     "allam-2-7b",
