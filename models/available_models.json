@@ -45,7 +45,6 @@
     "gemini-3-pro-preview",
     "gemini-3.1-flash-image-preview",
     "gemini-3.1-flash-lite-preview",
-    "gemini-3.1-flash-live-preview",
     "gemini-3.1-pro-preview",
     "gemini-3.1-pro-preview-customtools",
     "gemini-embedding-001",
@@ -53,6 +52,7 @@
     "gemini-flash-latest",
     "gemini-flash-lite-latest",
     "gemini-pro-latest",
-    "gemini-robotics-er-1.5-preview"
+    "gemini-robotics-er-1.5-preview",
+    "gemini-robotics-er-1.6-preview"
   ]
 }
