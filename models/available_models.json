@@ -56,6 +56,7 @@
     "gemini-omni-flash-preview",
     "gemini-pro-latest",
     "gemini-robotics-er-1.5-preview",
-    "gemini-robotics-er-1.6-preview"
+    "gemini-robotics-er-1.6-preview",
+    "gemini-robotics-er-2-preview"
   ]
 }
