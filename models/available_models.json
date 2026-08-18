@@ -1,8 +1,7 @@
 {
   "cerebras": [
     "gemma-4-31b",
-    "gpt-oss-120b",
-    "zai-glm-4.7"
+    "gpt-oss-120b"
   ],
   "groq": [
     "allam-2-7b",
@@ -10,8 +9,6 @@
     "canopylabs/orpheus-v1-english",
     "groq/compound",
     "groq/compound-mini",
-    "llama-3.1-8b-instant",
-    "llama-3.3-70b-versatile",
     "meta-llama/llama-prompt-guard-2-22m",
     "meta-llama/llama-prompt-guard-2-86m",
     "openai/gpt-oss-120b",
@@ -40,11 +37,13 @@
     "gemini-3.1-flash-lite",
     "gemini-3.1-flash-lite-image",
     "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-live-preview",
     "gemini-3.1-flash-tts-preview",
     "gemini-3.1-pro-preview",
     "gemini-3.1-pro-preview-customtools",
     "gemini-3.5-flash",
     "gemini-3.5-flash-lite",
+    "gemini-3.5-live-translate-preview",
     "gemini-3.6-flash",
     "gemini-3.7-flash",
     "gemini-embedding-001",
@@ -55,6 +54,7 @@
     "gemini-omni-flash-preview",
     "gemini-pro-latest",
     "gemini-robotics-er-1.6-preview",
-    "gemini-robotics-er-2-preview"
+    "gemini-robotics-er-2-preview",
+    "gemini-robotics-er-2-streaming-preview"
   ]
 }
