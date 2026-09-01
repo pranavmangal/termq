@@ -38,6 +38,7 @@
     "gemini-3.1-flash-lite",
     "gemini-3.1-flash-lite-image",
     "gemini-3.1-flash-lite-preview",
+    "gemini-3.1-flash-live-preview",
     "gemini-3.1-flash-tts-preview",
     "gemini-3.1-pro-preview",
     "gemini-3.1-pro-preview-customtools",
@@ -55,7 +56,6 @@
     "gemini-omni-1.1-flash",
     "gemini-omni-flash-preview",
     "gemini-pro-latest",
-    "gemini-robotics-er-1.6-preview",
     "gemini-robotics-er-2-preview"
   ]
 }
